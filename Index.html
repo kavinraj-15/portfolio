@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Secure Vault</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background: #0f172a;
+            color: white;
+        }
+        .box {
+            margin-top: 100px;
+        }
+        input {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+        }
+        button {
+            padding: 10px 20px;
+            background: #22c55e;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+        }
+        .hidden {
+            display: none;
+        }
+        a {
+            display: block;
+            margin: 10px;
+            color: #38bdf8;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box" id="loginBox">
+    <h2>🔐 Enter Password</h2>
+    <input type="password" id="password" placeholder="Enter password">
+    <br><br>
+    <button onclick="checkPassword()">Login</button>
+    <p id="error" style="color:red;"></p>
+</div>
+
+<div class="box hidden" id="vault">
+    <h2>📂 My Documents</h2>
+
+    <!-- Add your files here -->
+    <a href="resume.pdf" target="_blank">My Resume</a>
+    <a href="certificate.pdf" target="_blank">Certificate</a>
+
+</div>
+
+<script>
+function checkPassword() {
+    var pass = document.getElementById("password").value;
+
+    if (pass === "kavin123") {  // 🔑 CHANGE PASSWORD HERE
+        document.getElementById("loginBox").style.display = "none";
+        document.getElementById("vault").style.display = "block";
+    } else {
+        document.getElementById("error").innerText = "Wrong Password!";
+    }
+}
+</script>
+
+</body>
+</html>
